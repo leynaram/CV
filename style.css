@@ -1744,5 +1744,565 @@ h4 {
     .logo {
         font-size: 2.3rem;
     }
+   /* =========================================================
+   CORRECTIONS PORTFOLIO
+   À AJOUTER TOUT EN BAS DE style.css
+========================================================= */
+
+
+/* =========================================================
+   BOUTONS ACCUEIL
+   espace entre "Télécharger mon CV" et "Voir mes projets"
+========================================================= */
+
+.home-buttons {
+    display: flex !important;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem !important;
+    margin-top: 1rem;
+}
+
+.home-buttons .btn {
+    margin: 0 !important;
+}
+
+
+/* =========================================================
+   TOUTES LES CARTES SERVICES
+   même hauteur / même largeur
+========================================================= */
+
+.services .services-container {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+
+    align-items: stretch !important;
+    justify-content: center !important;
+
+    gap: 2.5rem !important;
+
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+
+/* carte uniforme */
+
+.services .services-container .services-box {
+    width: 100% !important;
+    height: 100% !important;
+
+    min-height: 340px;
+
+    margin: 0 !important;
+
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    padding: 3.5rem 2.5rem;
+
+    border-radius: 2rem;
+
+    background: var(--card-color);
+
+    border: .1rem solid var(--border-color);
+    border-top: .5rem solid var(--main-color);
+
+    box-shadow: 0 .5rem 1.8rem var(--shadow-color);
+
+    transition: transform .35s ease,
+                box-shadow .35s ease,
+                border-color .35s ease;
+}
+
+
+.services .services-container .services-box:hover {
+    transform: translateY(-7px);
+
+    box-shadow: 0 1.2rem 2.5rem var(--shadow-color);
+
+    border-color: var(--main-color);
+}
+
+
+/* icônes */
+
+.services .services-container .services-box > i {
+    font-size: 5.5rem;
+
+    color: var(--main-color);
+
+    margin-bottom: 1.5rem;
+}
+
+
+/* titres */
+
+.services .services-container .services-box h3 {
+    font-size: 2.2rem;
+
+    line-height: 1.35;
+
+    text-align: center;
+
+    margin-bottom: .7rem;
+}
+
+
+.services .services-container .services-box h4 {
+    font-size: 1.35rem;
+
+    text-align: center;
+
+    margin-bottom: 1.5rem;
+}
+
+
+/* paragraphes */
+
+.services .services-container .services-box p {
+    font-size: 1.5rem;
+
+    line-height: 1.7;
+
+    text-align: center;
+
+    margin: .8rem 0;
+}
+
+
+/* =========================================================
+   EXPERIENCES
+   4 cartes parfaitement alignées
+========================================================= */
+
+#experience .services-container {
+    grid-template-columns: repeat(4, 1fr) !important;
+}
+
+
+#experience .services-box {
+    min-height: 540px !important;
+}
+
+
+/* évite qu'un grand titre décale tout le contenu */
+
+#experience .services-box h3 {
+    min-height: 6rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* entreprise sous le titre */
+
+#experience .services-box h4 {
+    min-height: 2.2rem;
+}
+
+
+/* =========================================================
+   COMPETENCES
+========================================================= */
+
+#skills .services-container {
+    grid-template-columns: repeat(3, 1fr) !important;
+}
+
+
+#skills .services-box {
+    min-height: 310px !important;
+}
+
+
+/* =========================================================
+   FORMATION
+   exactement 3 cartes identiques
+========================================================= */
+
+#education .services-container {
+    grid-template-columns: repeat(3, 1fr) !important;
+
+    align-items: stretch !important;
+}
+
+
+#education .services-box {
+    min-height: 300px !important;
+    height: 100% !important;
+
+    justify-content: center !important;
+}
+
+
+/* évite qu'une carte paraisse plus petite */
+
+#education .services-box h3 {
+    min-height: 5.8rem;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+#education .services-box h4 {
+    min-height: 2.5rem;
+}
+
+
+/* =========================================================
+   CERTIFICATIONS
+========================================================= */
+
+#certifications .services-container {
+    grid-template-columns: repeat(4, 1fr) !important;
+}
+
+
+#certifications .services-box {
+    min-height: 270px !important;
+
+    justify-content: center !important;
+}
+
+
+/* =========================================================
+   COMMUCARD
+========================================================= */
+
+#business .services-container {
+    display: block !important;
+
+    max-width: 900px;
+
+    margin: 0 auto;
+}
+
+
+#business .business-box {
+    width: 100% !important;
+
+    min-height: auto !important;
+
+    padding: 5rem 6rem;
+
+    border: .15rem solid var(--main-color);
+
+    border-top: .5rem solid var(--main-color);
+
+    text-align: center;
+}
+
+
+#business .business-box h3 {
+    font-size: 3.5rem;
+
+    min-height: auto;
+}
+
+
+#business .business-box h4 {
+    font-size: 1.7rem;
+
+    min-height: auto;
+}
+
+
+/* =========================================================
+   PROJETS
+   corrige les petites "barres" visibles sur ta capture
+========================================================= */
+
+#projects {
+    min-height: auto;
+
+    padding-bottom: 10rem;
+}
+
+
+#projects .portfolio-container {
+    display: grid !important;
+
+    grid-template-columns: repeat(3, 1fr) !important;
+
+    align-items: stretch !important;
+
+    gap: 2.5rem !important;
+
+    max-width: 1300px;
+
+    margin: 0 auto;
+}
+
+
+#projects .portfolio-box {
+    position: relative !important;
+
+    width: 100% !important;
+
+    height: 310px !important;
+    min-height: 310px !important;
+
+    display: flex !important;
+
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+
+    border-radius: 2rem;
+
+    background:
+        linear-gradient(
+            145deg,
+            var(--card-color),
+            rgba(140, 170, 253, .12)
+        );
+
+    border: .1rem solid var(--border-color);
+
+    box-shadow: 0 .5rem 1.8rem var(--shadow-color);
+
+    transition: .4s ease;
+}
+
+
+#projects .portfolio-box:hover {
+    transform: translateY(-7px);
+
+    box-shadow: 0 1rem 2.5rem var(--shadow-color);
+}
+
+
+/* grosse icône quand on ne survole pas */
+
+#projects .project-icon {
+    width: 100%;
+    height: 100%;
+
+    display: flex !important;
+
+    align-items: center;
+    justify-content: center;
+
+    opacity: 1;
+
+    transition: .45s ease;
+}
+
+
+#projects .project-icon i {
+    font-size: 8rem;
+
+    color: var(--main-color);
+
+    transition: .45s ease;
+}
+
+
+#projects .portfolio-box:hover .project-icon {
+    opacity: 0;
+
+    transform: scale(.65);
+}
+
+
+/* contenu au hover */
+
+#projects .portfolio-layer {
+    position: absolute !important;
+
+    left: 0 !important;
+    bottom: -100% !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    display: flex !important;
+
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 3rem;
+
+    text-align: center;
+
+    opacity: 1 !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(104, 136, 225, .97),
+            rgba(140, 170, 253, .97)
+        );
+
+    transition: bottom .45s ease;
+}
+
+
+#projects .portfolio-box:hover .portfolio-layer {
+    bottom: 0 !important;
+}
+
+
+#projects .portfolio-layer h4 {
+    color: white;
+
+    font-size: 2.6rem;
+
+    margin-bottom: 1rem;
+}
+
+
+#projects .portfolio-layer p {
+    color: white;
+
+    font-size: 1.4rem;
+
+    line-height: 1.6;
+
+    margin: .4rem 0;
+}
+
+
+#projects .portfolio-layer a {
+    display: inline-flex;
+
+    justify-content: center;
+    align-items: center;
+
+    width: 5rem;
+    height: 5rem;
+
+    margin-top: 1.5rem;
+
+    background: white;
+
+    border-radius: 50%;
+}
+
+
+#projects .portfolio-layer a i {
+    font-size: 2.2rem;
+
+    color: var(--main-color);
+}
+
+
+/* =========================================================
+   TABLETTE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    #experience .services-container {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+
+    #experience .services-box {
+        min-height: 470px !important;
+    }
+
+
+    #skills .services-container {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+
+    #projects .portfolio-container {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+
+    #certifications .services-container {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    #experience .services-container,
+    #skills .services-container,
+    #education .services-container,
+    #certifications .services-container,
+    #projects .portfolio-container {
+
+        grid-template-columns: 1fr !important;
+    }
+
+
+    #experience .services-box,
+    #skills .services-box,
+    #education .services-box,
+    #certifications .services-box {
+
+        min-height: auto !important;
+    }
+
+
+    #experience .services-box h3,
+    #education .services-box h3 {
+
+        min-height: auto;
+    }
+
+
+    #projects .portfolio-box {
+        height: 290px !important;
+        min-height: 290px !important;
+    }
+
+
+    #business .business-box {
+        padding: 3.5rem 2.5rem;
+    }
+
+
+    .home-buttons {
+        gap: 1.5rem !important;
+    }
+
+}
+
+
+/* =========================================================
+   PETIT MOBILE
+========================================================= */
+
+@media (max-width: 450px) {
+
+    .home-buttons {
+        flex-direction: column;
+
+        width: 100%;
+
+        gap: 1.5rem !important;
+    }
+
+
+    .home-buttons .btn {
+        width: 100%;
+
+        max-width: 30rem;
+    }
+
+}
 
 }
