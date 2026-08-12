@@ -1,213 +1,1276 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Leyna Rahmouni</title>
 
-    <!-- swiper css -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <title>Leyna Rahmouni | Portfolio</title>
 
-    <!-- box icons -->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Swiper CSS -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 
-    <!-- css -->
+    <!-- Box Icons -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+        rel="stylesheet">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- design en-tête -->
+    <!-- ================= HEADER ================= -->
+
     <header class="header">
-        <a href="#" class="logo">Portfolio ♥</a>
+
+        <a href="#home" class="logo">
+            Leyna<span>.</span>
+        </a>
 
         <nav class="navbar">
             <a href="#home" class="active">Accueil</a>
             <a href="#about">À propos</a>
-            <a href="#services">Compétences</a>
-            <a href="#portfolio">Portfolio</a>
+            <a href="#experience">Expériences</a>
+            <a href="#skills">Compétences</a>
+            <a href="#business">Entreprise</a>
+            <a href="#projects">Projets</a>
             <a href="#contact">Contact</a>
         </nav>
 
         <div class="bx bx-moon" id="darkMode-icon"></div>
 
         <div class="bx bx-menu" id="menu-icon"></div>
+
     </header>
 
-    <!-- acceuil design -->
+
+    <!-- ================= ACCUEIL ================= -->
+
     <section class="home" id="home">
+
         <div class="home-content">
+
             <h3>Bonjour, je suis</h3>
+
             <h1>Leyna Rahmouni</h1>
-            <p>Je suis une jeune étudiante de 20 ans qui va intégrer </br>en septembre 2025 sa 1ère année de Master à la </br>Cyberuniversity.</p>
+
+            <h2>
+                Ingénieure Cybersécurité en formation
+            </h2>
+
+            <p>
+                Passionnée par la cybersécurité, le DevSecOps,
+                l'intelligence artificielle et l'entrepreneuriat.
+                J'évolue aujourd'hui sur des problématiques de SOC,
+                gestion des vulnérabilités, conformité réglementaire
+                et automatisation de la sécurité.
+            </p>
+
+
+            <!-- Réseaux -->
 
             <div class="social-media">
-                <a href="https://https://www.facebook.com/alice65083"><i class='bx bxl-facebook-square' ></i></a>
-                <a href="mailto:leyna.rahmouni@outlook.fr"><i class='bx bxl-gmail' ></i></a>
-                <a href="https://www.instagram.com/leyna.png/"><i class='bx bxl-instagram-alt'></i></a>
-                <a href="https://www.linkedin.com/in/leyna-rahmouni/"><i class='bx bxl-linkedin'></i></a>
+
+                <a href="mailto:leyna.rahmouni@outlook.fr"
+                    aria-label="Email">
+                    <i class='bx bx-envelope'></i>
+                </a>
+
+                <a href="https://www.instagram.com/leyna.png/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram">
+                    <i class='bx bxl-instagram-alt'></i>
+                </a>
+
+                <a href="https://www.linkedin.com/in/leynarahmouni"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn">
+                    <i class='bx bxl-linkedin'></i>
+                </a>
+
+                <a href="https://github.com/leynaram"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="GitHub">
+                    <i class='bx bxl-github'></i>
+                </a>
+
             </div>
 
-            <a href="CV-Leyna_Ingénieure_Cybersécurité.pdf" class="btn">Télecharger mon CV</a>
+
+            <div class="home-buttons">
+
+                <a href="CV_Leyna_Rahmouni.pdf"
+                    class="btn"
+                    download>
+                    Télécharger mon CV
+                </a>
+
+                <a href="#projects"
+                    class="btn">
+                    Voir mes projets
+                </a>
+
+            </div>
+
         </div>
-<!--roue des metiers-->
+
+
+        <!-- Cercle métiers -->
+
         <div class="profession-container">
+
             <div class="profession-box">
-                <div class="profession" style="--i:0;">
+
+
+                <div class="profession"
+                    style="--i:0;">
+
+                    <i class='bx bx-shield-quarter'></i>
+
+                    <h3>
+                        Cybersécurité
+                    </h3>
+
+                </div>
+
+
+                <div class="profession"
+                    style="--i:1;">
+
                     <i class='bx bx-code-alt'></i>
-                    <h3>Développeuse Web</h3>
+
+                    <h3>
+                        DevSecOps
+                    </h3>
+
                 </div>
-                <div class="profession" style="--i:1;">
-                    <i class='bx bx-camera'></i>
-                    <h2>Étudiante en cybersécurité</h2>
+
+
+                <div class="profession"
+                    style="--i:2;">
+
+                    <i class='bx bx-bot'></i>
+
+                    <h3>
+                        IA & Automatisation
+                    </h3>
+
                 </div>
-                <div class="profession" style="--i:2;">
-                    <i class='bx bx-palette'></i>
-                    <h3>Web Designer</h3>
+
+
+                <div class="profession"
+                    style="--i:3;">
+
+                    <i class='bx bx-briefcase-alt-2'></i>
+
+                    <h3>
+                        Entrepreneuse
+                    </h3>
+
                 </div>
-                <div class="profession" style="--i:3;">
-                    <i class='bx bx-video-recording'></i>
-                    <h2>Assistante informatique</h2>
-                </div>
+
 
                 <div class="circle"></div>
+
             </div>
+
 
             <div class="overlay"></div>
+
         </div>
+
+
+        <!-- Photo -->
 
         <div class="home-img">
-            <img src="images/home.png" alt="">
+
+            <img src="images/home.png"
+                alt="Leyna Rahmouni">
+
         </div>
+
     </section>
 
-    <!-- A propos -->
+
+
+    <!-- ================= A PROPOS ================= -->
+
     <section class="about" id="about">
+
+
         <div class="about-img">
-            <img src="IMG_3827.png" alt="a propos">
+
+            <img src="IMG_3827.png"
+                alt="Leyna Rahmouni">
+
         </div>
+
 
         <div class="about-content">
-            <h2 class="heading">À <span>propos</span></h2>
-            <h3>Je suis future étudiante à la Cyberuniversité.</h3>
-            <p>Après avoir réalisée une première année universitaire à l'université Claude Bernard de Lyon 1 et ayant toujours voulu étudier la cybersécurité; j'ai profité de l'occasion après avoir été acceptée dans cette école. J'ai également été Élue Universitaire à l'université Lyon 1 en tant que titulaire. En dehors des cours j'aime beaucoup les nouvelles technologies <i class='bx bx-desktop'></i>, la couture, les jeux videos<i class='bx bx-game' ></i> et le sport<i class='bx bx-basketball'></i>.</p>
-            <p> J'aime beaucoup découvrir de nouveaux pays. Ma prochaine destination est New York.</p>
+
+
+            <h2 class="heading">
+
+                À <span>propos</span>
+
+            </h2>
+
+
+            <h3>
+                Cybersécurité, IA et entrepreneuriat.
+            </h3>
+
+
+            <p>
+                Je poursuis actuellement mon parcours en cybersécurité
+                et intégrerai le cursus Ingénieure Cybersécurité
+                CyberUniversité / ECE.
+            </p>
+
+
+            <p>
+                Mon parcours professionnel m'a permis de travailler
+                sur plusieurs dimensions de la sécurité des systèmes
+                d'information : DevSecOps, analyse SOC,
+                investigation forensic, gestion des vulnérabilités,
+                administration d'infrastructures et conformité
+                réglementaire.
+            </p>
+
+
+            <p>
+                J'ai notamment travaillé sur des problématiques liées
+                à PCI DSS, DORA, SWIFT CSP, RGPD, NIS2 et ISO 27001,
+                ainsi que sur des environnements SIEM basés sur
+                Wazuh et ELK.
+            </p>
+
+
+            <p>
+                En parallèle, je développe plusieurs projets techniques,
+                dont ARIA, un agent IA dédié à la cybersécurité,
+                et Commucard, ma propre solution SaaS de fidélité
+                digitale destinée aux commerçants.
+            </p>
+
+
+            <p>
+                J'apprécie particulièrement les projets dans lesquels
+                je peux combiner sécurité, développement,
+                automatisation, produit et créativité.
+            </p>
+
         </div>
+
     </section>
 
-    <!-- Études et Compétences -->
-    <section class="services" id="services">
-        <h2 class="heading"><span>Études et Compétences</span></h2>
+
+
+    <!-- ================= EXPERIENCES ================= -->
+
+    <section class="services" id="experience">
+
+
+        <h2 class="heading">
+
+            Mes <span>expériences</span>
+
+        </h2>
+
 
         <div class="services-container">
+
+
+            <!-- Lemonway -->
+
             <div class="services-box">
-                <i class='bx bx-code-alt'></i>
-                <h3>Alternante Support applicatif L2 / Assistante RSSI</h3>
-                <p>Actuellement alternante chez Caresid, je suis support applicatif L2 ainsi que Assistante RSSI. Je m'occupe de la rédaction de Charte Utilisateur et Charte Administrateur ainsi que la modification de structure d'établissement de Santé.</p>
-            </div>
-            <div class="services-box">
-                <i class='bx bx-code-alt'></i>
-                <h3>Stagiaire à l'essec en tant que développeuse no code ainsi que DevSecOps</h3>
-                <p>J'ai pu réaliser un stage de 6 mois à l'ESSEC en tant que contributrice Contentfull, projet CNA ainsi que DevSecOps gérant le SIEM de celui-ci sur ELASTIC.</p>
-            </div>
-            <div class="services-box">
-                <i class='bx bx-laptop' ></i>
-                <h3>Élue Universitaire CFVU Sciences</h3>
-                <p> 
-                    J'ai été Élue universitaire en CFVU sciences. Participant aux conseils universitaires pour améliorer la vie des élèves sur le Campus. 
+
+                <i class='bx bx-shield-quarter'></i>
+
+                <h3>
+                    Ingénieure Sécurité DevSecOps
+                </h3>
+
+                <h4>
+                    Lemonway
+                </h4>
+
+                <p>
+                    Fintech réglementée ACPR.
+                    Pilotage d'audits de sécurité,
+                    suivi des recommandations et des plans
+                    de remédiation, gestion des vulnérabilités
+                    et participation aux travaux de conformité.
                 </p>
+
+                <p>
+                    Mise en conformité PCI DSS, DORA et SWIFT CSP,
+                    déploiement d'une infrastructure Wi-Fi sécurisée,
+                    administration Jira et mise en place
+                    d'un SIEM Wazuh.
+                </p>
+
+                <p>
+                    Analyse SOC, triage et qualification
+                    des alertes ainsi que participation
+                    à la réponse aux incidents de sécurité.
+                </p>
+
             </div>
+
+
+
+            <!-- Careside -->
+
             <div class="services-box">
-                <i class='bx bx-bar-chart-alt'></i>
-                <h3>Assistante commerciale</h3>
-                <p>Assistante commerciale chez Youpiii auto école et Soleyna. Mon rôle était d'accompagner la clientèle, gérer les emplois du temps, ainsi que les objets connectés de l'entreprise. Je travaillais essentiellement sur MacOS et Windows.</p>
+
+                <i class='bx bx-support'></i>
+
+                <h3>
+                    Support Logiciel & Chargée de mission RSSI
+                </h3>
+
+                <h4>
+                    Careside
+                </h4>
+
+                <p>
+                    Gestion du support applicatif via Jira
+                    dans le respect des SLA :
+                    priorisation, escalade et clôture
+                    des tickets.
+                </p>
+
+                <p>
+                    Participation à la politique de sécurité
+                    de l'entreprise et rédaction
+                    de procédures relatives à la gestion
+                    des accès, aux mots de passe
+                    et aux incidents.
+                </p>
+
             </div>
+
+
+
+            <!-- ESSEC -->
+
+            <div class="services-box">
+
+                <i class='bx bx-terminal'></i>
+
+                <h3>
+                    DevOps & DevSecOps
+                </h3>
+
+                <h4>
+                    ESSEC Business School
+                </h4>
+
+                <p>
+                    Déploiement d'un SIEM ELK avec
+                    centralisation des logs,
+                    création de dashboards
+                    et détection d'anomalies.
+                </p>
+
+                <p>
+                    Investigation forensic,
+                    corrélation de logs multi-sources,
+                    identification d'IOC
+                    et recommandations de remédiation.
+                </p>
+
+                <p>
+                    Scans Nmap, analyse réseau
+                    et durcissement d'environnements
+                    Windows et Linux.
+                </p>
+
+            </div>
+
+
+
+            <!-- Ancienne expérience -->
+
+            <div class="services-box">
+
+                <i class='bx bx-group'></i>
+
+                <h3>
+                    Expérience relation client
+                </h3>
+
+                <h4>
+                    Youpiii Auto École
+                </h4>
+
+                <p>
+                    Accompagnement de la clientèle,
+                    organisation des emplois du temps
+                    et gestion de différents outils
+                    numériques utilisés par l'entreprise.
+                </p>
+
+            </div>
+
+
         </div>
+
     </section>
 
-    <!-- portfolio
-    <section class="portfolio" id="portfolio">
-        <h2 class="heading"> </h2>
+
+
+    <!-- ================= COMPETENCES ================= -->
+
+    <section class="services" id="skills">
+
+
+        <h2 class="heading">
+
+            Mes <span>compétences</span>
+
+        </h2>
+
+
+        <div class="services-container">
+
+
+            <div class="services-box">
+
+                <i class='bx bx-radar'></i>
+
+                <h3>
+                    SOC & SIEM
+                </h3>
+
+                <p>
+                    Wazuh
+                    <br>
+                    ELK Stack
+                    <br>
+                    Analyse de logs
+                    <br>
+                    Triage d'alertes
+                    <br>
+                    Investigation forensic
+                    <br>
+                    Réponse aux incidents
+                </p>
+
+            </div>
+
+
+
+            <div class="services-box">
+
+                <i class='bx bx-check-shield'></i>
+
+                <h3>
+                    GRC & Conformité
+                </h3>
+
+                <p>
+                    ISO 27001
+                    <br>
+                    PCI DSS
+                    <br>
+                    DORA
+                    <br>
+                    RGPD
+                    <br>
+                    NIS2
+                    <br>
+                    SWIFT CSP
+                </p>
+
+            </div>
+
+
+
+            <div class="services-box">
+
+                <i class='bx bx-cloud'></i>
+
+                <h3>
+                    Cloud & Infrastructure
+                </h3>
+
+                <p>
+                    Microsoft Azure
+                    <br>
+                    Cloudflare WAF / DDoS
+                    <br>
+                    Administration système
+                    <br>
+                    Administration réseau
+                    <br>
+                    Wi-Fi sécurisé
+                    <br>
+                    Gestion des vulnérabilités
+                </p>
+
+            </div>
+
+
+
+            <div class="services-box">
+
+                <i class='bx bx-code-block'></i>
+
+                <h3>
+                    Développement
+                </h3>
+
+                <p>
+                    Python
+                    <br>
+                    Flask
+                    <br>
+                    PHP
+                    <br>
+                    JavaScript
+                    <br>
+                    HTML / CSS
+                    <br>
+                    API REST
+                </p>
+
+            </div>
+
+
+
+            <div class="services-box">
+
+                <i class='bx bx-bot'></i>
+
+                <h3>
+                    IA & Automatisation
+                </h3>
+
+                <p>
+                    LLM
+                    <br>
+                    Groq
+                    <br>
+                    Mistral
+                    <br>
+                    Agents IA
+                    <br>
+                    Automatisation
+                    <br>
+                    Intégration API
+                </p>
+
+            </div>
+
+
+
+            <div class="services-box">
+
+                <i class='bx bx-network-chart'></i>
+
+                <h3>
+                    Outils Cyber
+                </h3>
+
+                <p>
+                    Microsoft Defender
+                    <br>
+                    Nmap
+                    <br>
+                    Jira
+                    <br>
+                    Wazuh
+                    <br>
+                    ELK
+                    <br>
+                    Cloudflare
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= ENTREPRISE ================= -->
+
+    <section class="services" id="business">
+
+
+        <h2 class="heading">
+
+            Mon <span>entreprise</span>
+
+        </h2>
+
+
+        <div class="services-container">
+
+
+            <div class="services-box business-box">
+
+                <i class='bx bx-wallet'></i>
+
+
+                <h3>
+                    Commucard
+                </h3>
+
+
+                <h4>
+                    Fondatrice & Développeuse
+                </h4>
+
+
+                <p>
+                    Commucard est une solution SaaS
+                    de fidélité digitale destinée
+                    aux commerces de proximité.
+                </p>
+
+
+                <p>
+                    Elle permet aux commerçants
+                    de proposer une carte de fidélité
+                    directement intégrée
+                    à Apple Wallet et Google Wallet,
+                    sans nécessiter l'installation
+                    d'une application dédiée.
+                </p>
+
+
+                <p>
+                    J'ai développé l'ensemble
+                    de la solution :
+                    génération des cartes Wallet,
+                    QR codes, gestion des tampons,
+                    récompenses, espace commerçant,
+                    notifications push,
+                    base de données,
+                    abonnements et paiements.
+                </p>
+
+
+                <p>
+                    Le projet intègre également
+                    des fonctionnalités d'automatisation
+                    et d'intelligence artificielle
+                    pour accompagner les commerçants
+                    dans leur stratégie de fidélisation.
+                </p>
+
+
+                <a href="https://commucard.fr"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn">
+
+                    Découvrir Commucard
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= PROJETS ================= -->
+
+    <section class="portfolio" id="projects">
+
+
+        <h2 class="heading">
+
+            Mes <span>projets</span>
+
+        </h2>
+
 
         <div class="portfolio-container">
+
+
+            <!-- ARIA -->
+
             <div class="portfolio-box">
-                <img src="images/image2.jpeg" alt="">
+
+                <div class="project-icon">
+
+                    <i class='bx bx-bot'></i>
+
+                </div>
+
 
                 <div class="portfolio-layer">
-                    <h4>To do liste application Web</h4>
-                    <p>Voici une to do liste en ligne ou la data est stockée sur le navigateur. Elle permet de créer des taches, les valider et à également une barre de progression. </p>
-                    <a href="indexo.html"><i class='bx bx-link-external'></i></a>
+
+                    <h4>
+                        ARIA
+                    </h4>
+
+                    <p>
+                        Agent IA de cybersécurité
+                        conçu et développé en autonomie.
+                    </p>
+
+                    <p>
+                        Intégration de Microsoft Defender,
+                        Cloudflare WAF, Jira,
+                        modules OSINT et conformité
+                        RGPD / NIS2 / DORA.
+                    </p>
+
+
+                    <a href="#experience"
+                        title="Découvrir ARIA">
+
+                        <i class='bx bx-link-external'></i>
+
+                    </a>
+
                 </div>
+
             </div>
+
+
+
+            <!-- Commucard -->
+
             <div class="portfolio-box">
-                <img src="images/image5.jpeg" alt="">
+
+                <div class="project-icon">
+
+                    <i class='bx bx-wallet'></i>
+
+                </div>
+
 
                 <div class="portfolio-layer">
-                    <h4>Site web essec</h4>
-                    <p>J'ai participée en tant que contributrice au nouveau site de l'ESSEC lors d'une période de stage de 2 mois. </p>
-                    <a href="#"><i class='bx bx-link-external'></i></a>
+
+                    <h4>
+                        Commucard
+                    </h4>
+
+                    <p>
+                        Solution SaaS
+                        de fidélité digitale avec
+                        Apple Wallet,
+                        Google Wallet,
+                        QR codes et espace commerçant.
+                    </p>
+
+
+                    <a href="https://commucard.fr"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="Voir Commucard">
+
+                        <i class='bx bx-link-external'></i>
+
+                    </a>
+
                 </div>
+
             </div>
+
+
+
+            <!-- Jeu -->
+
             <div class="portfolio-box">
-                <img src="images/image4.jpeg" alt="">
+
+                <div class="project-icon">
+
+                    <i class='bx bx-joystick'></i>
+
+                </div>
+
 
                 <div class="portfolio-layer">
-                    <h4>Ancien site CV</h4>
-                    <p>Ce site à été créer récemment et permet de voir mon évolution en plusieurs mois.</p>
-                    <a href="https://leynarahmouni.fr"><i class='bx bx-link-external'></i></a>
+
+                    <h4>
+                        Projet Jeu
+                    </h4>
+
+                    <p>
+                        Une expérience interactive
+                        développée sous la forme
+                        d'une page web dédiée.
+                    </p>
+
+
+                    <a href="index1.html"
+                        title="Lancer le jeu">
+
+                        <i class='bx bx-play-circle'></i>
+
+                    </a>
+
                 </div>
+
             </div>
+
+
+
+            <!-- SIEM -->
+
+            <div class="portfolio-box">
+
+                <div class="project-icon">
+
+                    <i class='bx bx-radar'></i>
+
+                </div>
+
+
+                <div class="portfolio-layer">
+
+                    <h4>
+                        SOC & SIEM
+                    </h4>
+
+                    <p>
+                        Travaux autour de Wazuh
+                        et ELK :
+                        centralisation des logs,
+                        analyse d'alertes,
+                        corrélation,
+                        investigation
+                        et recherche d'IOC.
+                    </p>
+
+
+                    <a href="#experience"
+                        title="Voir mon expérience SOC">
+
+                        <i class='bx bx-link-external'></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Forensic -->
+
+            <div class="portfolio-box">
+
+                <div class="project-icon">
+
+                    <i class='bx bx-search-alt'></i>
+
+                </div>
+
+
+                <div class="portfolio-layer">
+
+                    <h4>
+                        Investigation Forensic
+                    </h4>
+
+                    <p>
+                        Analyse de logs multi-sources,
+                        investigation d'activités suspectes
+                        et identification d'indicateurs
+                        de compromission.
+                    </p>
+
+
+                    <a href="#experience">
+
+                        <i class='bx bx-link-external'></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- GRC -->
+
+            <div class="portfolio-box">
+
+                <div class="project-icon">
+
+                    <i class='bx bx-file'></i>
+
+                </div>
+
+
+                <div class="portfolio-layer">
+
+                    <h4>
+                        GRC & Conformité
+                    </h4>
+
+                    <p>
+                        Travaux liés à PCI DSS,
+                        DORA, SWIFT CSP,
+                        RGPD, NIS2
+                        et ISO 27001.
+                    </p>
+
+
+                    <a href="#skills">
+
+                        <i class='bx bx-link-external'></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
         </div>
-    </section> -->
 
-
-              <!--  <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-pagination"></div>-->
-            </div>
-        </div>
-    </div>
-
-    <!-- contact  -->
-    <section class="contact" id="contact">
-        <h2 class="heading">Me <span>contacter !</span></h2>
-
-        <form action="">
-            <div class="input-box">
-                <input type="text" placeholder="Nom complet">
-                <input type="email" placeholder="Adresse Email">
-            </div>
-            <div class="input-box">
-                <input type="number" placeholder="Numéro de téléphone">
-                <input type="text" placeholder="Sujet">
-            </div>
-            <textarea name="" id="" cols="30" rows="10" placeholder="Votre message"></textarea>
-            <a href="mailto:leyna.rahmouni@outlook.fr"class="btn">Envoyer un message</a>
-        </form>
     </section>
 
-    <!-- bas de page design -->
-    <footer class="footer">
-        <div class="footer-text">
-            <p>Développé par Leyna Rahmouni.</p>
+
+
+    <!-- ================= FORMATION ================= -->
+
+    <section class="services" id="education">
+
+
+        <h2 class="heading">
+
+            Ma <span>formation</span>
+
+        </h2>
+
+
+        <div class="services-container">
+
+
+            <div class="services-box">
+
+                <i class='bx bx-graduation'></i>
+
+                <h3>
+                    Ingénieure Cybersécurité
+                </h3>
+
+                <h4>
+                    CyberUniversité / ECE
+                </h4>
+
+                <p>
+                    2026 — 2028
+                </p>
+
+            </div>
+
+
+
+            <div class="services-box">
+
+                <i class='bx bx-shield'></i>
+
+                <h3>
+                    Administrateur Cyber
+                </h3>
+
+                <h4>
+                    CyberUniversité
+                </h4>
+
+                <p>
+                    2025 — 2026
+                </p>
+
+            </div>
+
+
+
+            <div class="services-box">
+
+                <i class='bx bx-book'></i>
+
+                <h3>
+                    Double Bachelor
+                </h3>
+
+                <h4>
+                    Management & Cybersécurité
+                </h4>
+
+                <p>
+                    CyberManagement School
+                    <br>
+                    2023 — 2025
+                </p>
+
+            </div>
+
+
         </div>
 
-        <div class="footer-iconTop">
-            <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
+    </section>
+
+
+
+    <!-- ================= CERTIFICATIONS ================= -->
+
+    <section class="services" id="certifications">
+
+
+        <h2 class="heading">
+
+            Mes <span>certifications</span>
+
+        </h2>
+
+
+        <div class="services-container">
+
+
+            <div class="services-box">
+
+                <i class='bx bx-certification'></i>
+
+                <h3>
+                    ISO 27001
+                </h3>
+
+                <p>
+                    Lead Auditor
+                    <br>
+                    2026
+                </p>
+
+            </div>
+
+
+
+            <div class="services-box">
+
+                <i class='bx bx-task'></i>
+
+                <h3>
+                    Agile Master
+                </h3>
+
+                <p>
+                    Certification obtenue
+                    <br>
+                    2025
+                </p>
+
+            </div>
+
+
+
+            <div class="services-box">
+
+                <i class='bx bx-target-lock'></i>
+
+                <h3>
+                    Cisco Pentest
+                </h3>
+
+                <p>
+                    Certification
+                    actuellement en cours.
+                </p>
+
+            </div>
+
+
+
+            <div class="services-box">
+
+                <i class='bx bx-shield-alt-2'></i>
+
+                <h3>
+                    CompTIA Security+
+                </h3>
+
+                <p>
+                    Certification
+                    actuellement en cours.
+                </p>
+
+            </div>
+
+
         </div>
+
+    </section>
+
+
+
+    <!-- ================= CONTACT ================= -->
+
+    <section class="contact" id="contact">
+
+
+        <h2 class="heading">
+
+            Me <span>contacter</span>
+
+        </h2>
+
+
+        <p class="contact-intro">
+
+            Une opportunité, une collaboration
+            ou simplement envie d'échanger ?
+            N'hésitez pas à me contacter.
+
+        </p>
+
+
+        <form action="mailto:leyna.rahmouni@outlook.fr"
+            method="post"
+            enctype="text/plain">
+
+
+            <div class="input-box">
+
+                <input type="text"
+                    name="nom"
+                    placeholder="Nom complet"
+                    required>
+
+
+                <input type="email"
+                    name="email"
+                    placeholder="Adresse Email"
+                    required>
+
+            </div>
+
+
+            <div class="input-box">
+
+                <input type="tel"
+                    name="telephone"
+                    placeholder="Numéro de téléphone">
+
+
+                <input type="text"
+                    name="sujet"
+                    placeholder="Sujet"
+                    required>
+
+            </div>
+
+
+            <textarea name="message"
+                cols="30"
+                rows="10"
+                placeholder="Votre message"
+                required></textarea>
+
+
+            <input type="submit"
+                value="Envoyer un message"
+                class="btn">
+
+        </form>
+
+
+        <div class="contact-links">
+
+            <a href="mailto:leyna.rahmouni@outlook.fr">
+
+                <i class='bx bx-envelope'></i>
+
+                leyna.rahmouni@outlook.fr
+
+            </a>
+
+
+            <a href="https://www.linkedin.com/in/leynarahmouni"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                <i class='bx bxl-linkedin'></i>
+
+                LinkedIn
+
+            </a>
+
+
+            <a href="https://github.com/leynaram"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                <i class='bx bxl-github'></i>
+
+                GitHub
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+
+        <div class="footer-text">
+
+            <p>
+                Développé avec ♥ par Leyna Rahmouni.
+            </p>
+
+        </div>
+
+
+        <div class="footer-iconTop">
+
+            <a href="#home"
+                aria-label="Retour en haut">
+
+                <i class='bx bx-up-arrow-alt'></i>
+
+            </a>
+
+        </div>
+
+
     </footer>
 
 
-    <!-- scroll reveal -->
+
+    <!-- Scroll Reveal -->
+
     <script src="https://unpkg.com/scrollreveal"></script>
 
-    <!-- swiper js -->
+
+    <!-- Swiper JS -->
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
-    <!-- js -->
+
+    <!-- JS -->
+
     <script src="script.js"></script>
+
+
 </body>
 
 </html>
