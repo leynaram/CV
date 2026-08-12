@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NIGHT SHIFT — SOC Investigation Game</title>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<div class="scanlines"></div>
+<div class="crt-glow"></div>
+
+<header>
+  <div class="brand">◉ SOC-WATCH <span class="dim">// terminal analyste</span></div>
+  <div class="header-right">
+    <span class="dim" id="score-live">Score: 0</span>
+    <span class="dim" id="clock-line">14 MARS — 03:47</span>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ================= ÉCRAN TITRE ================= -->
+  <section id="sec-title" class="panel center">
+    <pre class="ascii">
+ ███╗   ██╗██╗ ██████╗ ██╗  ██╗████████╗
+ ████╗  ██║██║██╔════╝ ██║  ██║╚══██╔══╝
+ ██╔██╗ ██║██║██║  ███╗███████║   ██║   
+ ██║╚██╗██║██║██║   ██║██╔══██║   ██║   
+ ██║ ╚████║██║╚██████╔╝██║  ██║   ██║   
+ ╚═╝  ╚═══╝╚═╝ ╚═════╝ ╚═╝  ╚═╝   ╚═╝   
+        S H I F T
+    </pre>
+    <p class="dim">Jeu d'enquête cybersécurité — 4 actes, 6 puzzles, multi-preuves</p>
+    <div id="best-score-box" class="dim" style="margin:14px 0;"></div>
+    <button class="primary big" onclick="App.startBriefing()">▶ Prendre le poste</button>
+    <button class="ghost" onclick="App.showHowTo()">❓ Comment jouer</button>
+  </section>
+
+  <!-- ================= COMMENT JOUER ================= -->
+  <section id="sec-howto" class="panel hidden">
+    <h2>❓ Comment jouer</h2>
+    <ul class="rap">
+      <li><strong>Acte 1 :</strong> Examine les logs réseau. Utilise l'outil de lookup IP pour identifier la source de l'attaque.</li>
+      <li><strong>Acte 2 :</strong> Résous 3 puzzles : chiffre de César, décodage hexadécimal, reconstruction chronologique des événements.</li>
+      <li><strong>Acte 3 :</strong> Accès aux logs internes. Interroge les suspects — de nouvelles questions apparaissent selon les preuves que tu as découvertes.</li>
+      <li><strong>Accusation finale :</strong> Désigne le coupable ET sélectionne les preuves pertinentes à joindre au rapport. Le score dépend de la qualité de tes preuves.</li>
+      <li>Utilise les <strong>indices d'aide</strong> si tu bloques, mais chacun coûte des points.</li>
+    </ul>
+    <button class="ghost" onclick="App.hideHowTo()">← Retour</button>
+  </section>
+
+  <!-- ================= BRIEFING ================= -->
+  <section id="sec-intro" class="panel hidden">
+    <h2>📋 BRIEFING D'INCIDENT — SecuriTech Corp</h2>
+    <p><strong>14 mars, 03:41 —</strong> Le SIEM déclenche une alerte : <strong>2.3 Go de données RH exfiltrées</strong> vers une IP externe. Une session VPN est active à ce moment. La session se coupe à 03:44, et quelqu'un a tenté d'effacer les journaux d'authentification.</p>
+    <p><strong>Contexte :</strong> SecuriTech Corp (140 salariés) gère la paie et les données RH de plusieurs grands comptes. Tu es analyste SOC junior, c'est ta première astreinte seul.</p>
+    <p><strong>Ta mission en 4 actes :</strong></p>
+    <ol>
+      <li><strong>Acte 1 :</strong> Analyser les logs réseau (SIEM, VPN)</li>
+      <li><strong>Acte 2 :</strong> Résoudre des puzzles forensiques (chiffre, hex, chrono)</li>
+      <li><strong>Acte 3 :</strong> Accéder aux logs internes, interroger les suspects</li>
+      <li><strong>Acte 4 :</strong> Rédiger un rapport d'accusation appuyé par des preuves solides</li>
+    </ol>
+    <p class="dim">⚠️ Chaque acte se débloque seulement si le précédent est complet. Les indices d'aide coûtent des points. Les fausses pistes existent.</p>
+    <button class="primary" onclick="App.startGame()">▶ Démarrer l'enquête</button>
+  </section>
+
+  <!-- ================= JEU ================= -->
+  <div id="game-sections" class="hidden">
+
+    <section class="panel">
+      <h2>📊 Tableau de bord</h2>
+      <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+      <p class="dim" id="progress-text">0 / 20 éléments d'enquête complétés</p>
+      <button class="ghost small" onclick="App.useHint()">💡 Indice d'aide (-15 pts)</button>
+      <span class="dim" id="hint-count"></span>
+    </section>
+
+    <!-- =============== ACTE 1 =============== -->
+    <section class="panel">
+      <h2>🟢 ACTE 1 — Analyse réseau</h2>
+      <p class="dim" id="act1-status">En cours...</p>
+      <p class="dim">Examine les logs du SIEM et de la passerelle VPN. Utilise l'outil de lookup pour identifier l'IP source.</p>
+      <div class="grid" id="logs-act1-grid"></div>
+
+      <div id="whois-tool" class="card hidden" style="margin-top:14px;">
+        <h3>🔍 Outil de lookup WHOIS</h3>
+        <p class="dim">Entrée l'IP trouvée dans les logs VPN.</p>
+        <input type="text" id="whois-ip" placeholder="ex: 185.44.12.9">
+        <button onclick="App.runWhois()">Rechercher</button>
+        <div id="whois-result" style="margin-top:10px;"></div>
+      </div>
+    </section>
+
+    <!-- =============== ACTE 2 =============== -->
+    <section id="act2-panel" class="panel locked-panel">
+      <h2>🟡 ACTE 2 — Puzzles forensiques</h2>
+      <p class="dim" id="act2-status">🔒 Verrouillé jusqu'à la fin de l'Acte 1</p>
+      <p class="dim">Résous les 3 puzzles ci-dessous pour débloquer l'Acte 3.</p>
+
+      <!-- Puzzle 1: César -->
+      <div class="card" style="margin-top:14px;">
+        <h3>Puzzle 1 — Chiffre de César</h3>
+        <p class="dim">Note chiffrée trouvée dans un fichier temporaire du serveur RH.</p>
+        <div class="cipher-box" id="cipher-text">KDFNHG WKH ILOH VHUYHU IURP EUXVVHOV</div>
+        <p>Décalage (1–25) :</p>
+        <input type="number" id="cipher-shift" min="1" max="25" placeholder="ex: 3">
+        <button onclick="App.tryCipher()">Déchiffrer</button>
+        <p id="cipher-result" class="dim"></p>
+      </div>
+
+      <!-- Puzzle 2: Hexadécimal -->
+      <div class="card">
+        <h3>Puzzle 2 — Mot de passe caché (hexadécimal)</h3>
+        <p class="dim">Entrée trouvée dans un fichier de config : <code style="color:var(--green);">52 45 56 41 4E 43 48 45 32 30 32 36</code></p>
+        <p class="dim">Convertis chaque paire hexadécimale en caractère ASCII. (Table : 30–39 = 0–9, 41–5A = A–Z, etc.)</p>
+        <input type="text" id="hex-input" placeholder="Résultat en clair">
+        <button onclick="App.tryHex()">Vérifier</button>
+        <p id="hex-result" class="dim"></p>
+      </div>
+
+      <!-- Puzzle 3: Chronologie -->
+      <div class="card">
+        <h3>Puzzle 3 — Reconstruction chronologique</h3>
+        <p class="dim">Remets les événements dans l'ordre en cliquant sur les boutons ci-dessous.</p>
+        <div id="timeline-pool" style="margin-bottom:12px;"></div>
+        <p class="dim" style="margin:10px 0;">Ordre choisi :</p>
+        <div id="timeline-order"></div>
+        <p id="timeline-result" class="dim"></p>
+      </div>
+    </section>
+
+    <!-- =============== ACTE 3 =============== -->
+    <section id="act3-panel" class="panel locked-panel">
+      <h2>🔵 ACTE 3 — Logs internes + Interrogatoires</h2>
+      <p class="dim" id="act3-status">🔒 Verrouillé jusqu'à la fin de l'Acte 2</p>
+
+      <!-- Logs Act3 -->
+      <div class="grid" id="logs-act3-grid" style="margin-bottom:14px;"></div>
+
+      <!-- Suspects -->
+      <h3>👥 Interrogatoires</h3>
+      <p class="dim">Pose des questions à chaque suspect. De nouvelles questions (🔓) se débloquent selon les preuves découvertes.</p>
+      <div id="suspects-list"></div>
+    </section>
+
+    <!-- =============== INDICES =============== -->
+    <section class="panel">
+      <h2>🧷 Tableau d'indices</h2>
+      <div id="clues-found"><em class="dim">Aucun indice retenu pour le moment.</em></div>
+    </section>
+
+    <!-- =============== GRAPHE =============== -->
+    <section class="panel">
+      <h2>🕸️ Graphe de corrélation</h2>
+      <p class="dim">Visualisation des liens entre preuves et suspects.</p>
+      <canvas id="graph-canvas" width="860" height="400"></canvas>
+    </section>
+
+    <!-- =============== BOUTON ACCUSE =============== -->
+    <section class="panel">
+      <button class="primary" onclick="App.goToAccusation()">📤 Passer à la rédaction du rapport</button>
+    </section>
+
+  </div>
+
+  <!-- ================= ACTE 4 — ACCUSATION ================= -->
+  <section id="sec-accuse" class="panel" style="display:none;">
+    <h2>🔴 ACTE 4 — Rapport final</h2>
+    <p><strong>Suspect désigné :</strong></p>
+    <select id="accuse-select"><option value="">-- Choisir --</option></select>
+
+    <p style="margin-top:16px;"><strong>Preuves à joindre au rapport :</strong> (sélectionne celles qui te semblent pertinentes)</p>
+    <div id="evidence-picker" style="margin:14px 0;"></div>
+
+    <button class="primary" onclick="App.accuse()">✅ Envoyer le rapport à la direction</button>
+  </section>
+
+  <!-- ================= FIN ================= -->
+  <section id="sec-end" class="panel" style="display:none;">
+    <div class="result-title" id="end-title"></div>
+    <div class="rank" id="end-rank"></div>
+    <p id="end-text"></p>
+    <div id="end-rapport"></div>
+    <div class="center" style="margin-top:16px;">
+      <button class="primary" onclick="App.downloadReport()">⬇ Télécharger le rapport (.txt)</button>
+      <button class="ghost" onclick="location.reload()">🔁 Rejouer</button>
+    </div>
+  </section>
+
+</main>
+
+<footer class="dim center">
+  NIGHT SHIFT — Jeu d'enquête cybersécurité en JavaScript vanilla, aucune dépendance.
+</footer>
+
+<script src="assets/data.js"></script>
+<script src="assets/game.js"></script>
+</body>
+</html>
